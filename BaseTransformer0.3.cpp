@@ -17,10 +17,22 @@ void Menu(int *typenumber, int *operation, int *suboperation){
   cout<<"----------------------------------------------------------------"<<endl;
   cout<<"Especify number type: ";
   cin>>*typenumber;
+  while(*typenumber>4||*typenumber<1){
+    cout<<"Especify one valid number type: ";
+    cin>>*typenumber;
+  };
   cout<<"Basic operations(1) or especial operations(2) ?: ";
   cin>>*operation;
+  while(*operation>2||*operation<1){
+   cout<<"Type one valid operation: ";
+   cin>>*operation;
+  };
   cout<<"Type your suboperation: ";
   cin>>*suboperation;
+  while(*suboperation>4||*suboperation<1){
+    cout<<"Type one valid suboperation: ";
+    cin>>*suboperation;
+  };
 };
 
 //this is the function responsible for translating decimal base into octal base.
@@ -560,8 +572,6 @@ int main(){
       case(4):
         HexMenu(hexnumber, &operation, &suboperation, &Num, hexNum, &base);
       break;
-      default:
-        cout<<"Type one valid operation";
     };
     cout<<"Do you want to make any more changes? [S/N]";
     cin>>loop;
